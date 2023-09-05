@@ -1724,6 +1724,9 @@
 #X obj 1122 590 tgl 16 0 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 1123 642 tgl 16 0 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 1128 696 tgl 16 0 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 628 666 tgl 16 0 empty empty empty 0 -8 0 10 #fcfcfc #000000 #000000 0 1;
+#X obj 627 630 loadbang;
+#X obj 645 649 del 10000;
 #X connect 1 0 0 0;
 #X connect 2 0 6 0;
 #X connect 5 0 3 0;
@@ -1853,8 +1856,6 @@
 #X connect 134 0 135 0;
 #X connect 135 0 130 0;
 #X connect 136 0 129 0;
-#X connect 136 1 85 1;
-#X connect 136 2 85 2;
 #X connect 137 0 146 0;
 #X connect 137 0 120 0;
 #X connect 138 0 83 0;
@@ -1951,3 +1952,7 @@
 #X connect 218 0 216 2;
 #X connect 219 0 218 0;
 #X connect 220 0 216 1;
+#X connect 230 0 136 0;
+#X connect 231 0 230 0;
+#X connect 231 0 232 0;
+#X connect 232 0 230 0;
