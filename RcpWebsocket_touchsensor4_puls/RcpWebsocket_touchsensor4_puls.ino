@@ -26,15 +26,16 @@ RcpServer rcpServer(transporter);
 RcpInt sensor1;
 RcpInt sensor2;
 RcpInt sensor3;
+RcpInt sensor4;
 
 
 
 
 // other variables
-int val[3];
-int gPin[] = {25,26,27};
-int sPin[] = {A0,A3,A6};
-int Num_of_Pins = 3;
+int val[4];
+int gPin[] = {25,26,27,14};
+int sPin[] = {A0,A3,A6,A7};
+int Num_of_Pins = 4;
 int cnt;
 long lastMillis;
 
@@ -76,6 +77,10 @@ void setup()
   sensor3 = rcpServer.exposeInt("sensor3");
   sensor3.setReadonly(true);
   sensor3.setMinMax(0, 4095);
+
+  sensor4 = rcpServer.exposeInt("sensor4");
+  sensor4.setReadonly(true);
+  sensor4.setMinMax(0, 4095);
  
   // update the server
   rcpServer.update();
@@ -90,7 +95,7 @@ void loop()
   
 // reading happens every 100ms
 long currentMillis = millis();
-if (currentMillis - lastMillis  > 50){
+if (currentMillis - lastMillis  > 30){
   lastMillis = currentMillis; // mark the current timing as lastMillis
   
   // toggle which sensor to read.
@@ -115,6 +120,7 @@ if (currentMillis - lastMillis  > 50){
   sensor1 = val[0];
   sensor2 = val[1];
   sensor3 = val[2];
+  sensor4 = val[3];
 }
   
   // update server
